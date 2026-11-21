@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir Chamado - TechSupport</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        <h2>TechSupport</h2>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="abrir-chamado.html" class="active">Abrir chamado</a>
+            <a href="chamados.html">Consultar chamados</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Abrir novo chamado</h1>
+                <p>Preencha os dados para solicitar suporte técnico.</p>
+            </div>
+            <span>Administrador</span>
+        </header>
+
+        <section class="ticket-form-container">
+
+            <h2>Informações do chamado</h2>
+
+            <form id="ticketForm">
+
+                <div class="form-group">
+                    <label for="nome">Nome do solicitante</label>
+                    <input type="text" id="nome" required
+                        placeholder="Digite seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailChamado">E-mail</label>
+                    <input type="email" id="emailChamado" required
+                        placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoria do problema</label>
+                    <select id="categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Internet">Internet</option>
+                        <option value="Computador">Computador</option>
+                        <option value="Impressora">Impressora</option>
+                        <option value="Software">Software</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade" required>
+                        <option value="">Selecione a prioridade</option>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição do problema</label>
+                    <textarea id="descricao" rows="5" required
+                        placeholder="Descreva o problema encontrado"></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn-submit">
+                        Registrar chamado
+                    </button>
+
+                    <a href="index.html" class="btn-cancel">
+                        Cancelar
+                    </a>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

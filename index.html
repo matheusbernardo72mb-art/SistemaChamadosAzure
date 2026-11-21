@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TechSupport</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        <h2>TechSupport</h2>
+
+        <nav>
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="abrir-chamado.html">Abrir chamado</a>
+            <a href="chamados.html">Consultar chamados</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Painel de Controle</h1>
+                <p>Bem-vindo ao sistema de suporte técnico!</p>
+            </div>
+            <span>Administrador</span>
+        </header>
+
+        <section class="cards">
+
+            <div class="stat-card">
+                <h3>Total de chamados</h3>
+                <strong>24</strong>
+                <p>Chamados registrados</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Abertos</h3>
+                <strong>10</strong>
+                <p>Aguardando atendimento</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Em andamento</h3>
+                <strong>8</strong>
+                <p>Em atendimento</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Concluídos</h3>
+                <strong>6</strong>
+                <p>Atendimentos finalizados</p>
+            </div>
+
+        </section>
+
+        <section class="recent-tickets">
+            <h2>Últimos chamados</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Solicitante</th>
+                        <th>Problema</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>João Silva</td>
+                        <td>Internet sem conexão</td>
+                        <td><span class="status open">Aberto</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>#002</td>
+                        <td>Maria Souza</td>
+                        <td>Computador lento</td>
+                        <td><span class="status progress">Em andamento</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>#003</td>
+                        <td>Pedro Santos</td>
+                        <td>Problema na impressora</td>
+                        <td><span class="status done">Concluído</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>

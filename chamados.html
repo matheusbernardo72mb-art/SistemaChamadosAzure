@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Chamados - TechSupport</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        <h2>TechSupport</h2>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="abrir-chamado.html">Abrir chamado</a>
+            <a href="chamados.html" class="active">Consultar chamados</a>
+            <a href="login.html">Sair</a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Consultar chamados</h1>
+                <p>Acompanhe todos os chamados registrados no sistema.</p>
+            </div>
+            <span>Administrador</span>
+        </header>
+
+        <section class="recent-tickets">
+
+            <h2>Lista de chamados</h2>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Solicitante</th>
+                            <th>Categoria</th>
+                            <th>Prioridade</th>
+                            <th>Descrição</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaChamados"></tbody>
+                </table>
+            </div>
+
+            <p id="mensagemVazia" class="empty-message">
+                Nenhum chamado registrado.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        const lista = document.getElementById("listaChamados");
+        const mensagem = document.getElementById("mensagemVazia");
+
+        const chamados = JSON.parse(
+            localStorage.getItem("chamados")
+        ) || [];
+
+        if (chamados.length > 0) {
+            mensagem.style.display = "none";
+
+            chamados.forEach((chamado, index) => {
+                const linha = document.createElement("tr");
+
+                const dados = [
+                    "#" + (index + 1).toString().padStart(3, "0"),
+                    chamado.nome,
+                    chamado.categoria,
+                    chamado.prioridade,
+                    chamado.descricao,
+                    chamado.data,
+                    chamado.status
+                ];
+
+                dados.forEach((dado, coluna) => {
+                    const celula = document.createElement("td");
+                    celula.textContent = dado;
+
+                    if (coluna === 6) {
+                        celula.classList.add("status", "open");
+                    }
+
+                    linha.appendChild(celula);
+                });
+
+                lista.appendChild(linha);
+            });
+        }
+    </script>
+
+</body>
+</html>
